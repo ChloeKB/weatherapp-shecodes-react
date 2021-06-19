@@ -56,8 +56,7 @@ export default function Forecast(props) {
     );
   } else {
     const apiKey = "dc61646fab1512ff70fdca30d4a70361";
-    let city = "Madrid";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}&units=metric`
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?q=${props.defaultCity}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(displayWeatherForecast);
     
     return ("The app is loading... 🔎")

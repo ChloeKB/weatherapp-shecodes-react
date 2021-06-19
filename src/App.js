@@ -12,7 +12,7 @@ export default function App() {
         <div className="col-6 box-one">
           <br />
           <Search />
-          <Forecast />
+          <Forecast defaultCity="Madrid" />
         </div>
       </div>
       <p className="coder"><a href="https://github.com/ChloeKB/weatherapp-shecodes-react">Open-source code</a> by Chloe KB 👩🏼‍💻</p>
