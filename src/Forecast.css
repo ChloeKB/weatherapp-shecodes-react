@@ -1,0 +1,58 @@
+.forecastMainWeather {
+  text-align: center;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.date-time {
+  font-size: 12px;
+}
+img {
+  width: 110px;
+  margin: 30px auto;
+}
+.temperature {
+  font-size: 45px;
+  font-weight: 500;
+}
+p {
+  font-size: 18px;
+}
+.day-block {
+  text-align: center;
+}
+.weather-card {
+  font-size: 20px;
+  text-align: center;
+  margin: 26px auto;
+  padding: 10px;
+  width: 100%;
+  height: 70px;
+}
+.coder,
+.github-link {
+  text-align: center;
+  font-family: monospace;
+  margin: 20px auto;
+  text-decoration: none;
+}
+.img2 {
+  width: 60px;
+  text-align: center;
+  vertical-align: top;
+  display: inline;
+  margin: 0 auto;
+}
+.weather-description {
+  font-size: 15px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.sunrise-sunset {
+  font-size: 14px;
+}
+.weather-forecast-day {
+  font-size: 15px;
+}
+#mintemp {
+  color: grey;
+}
