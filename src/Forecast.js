@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios from 'axios';
 import "./Forecast.css";
+import RevampedDate from "./RevampedDate";
 import 'bootstrap/dist/css/bootstrap.css';
 
 
@@ -18,8 +19,7 @@ export default function Forecast(props) {
       maxTemp: response.data.main.temp_max,
       description: response.data.weather[0].description,
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
-      currentDate: "Friday June 25th",
-      currentTime: "11:35",
+      currentDate: new Date(response.data.dt * 1000),
     });
   }
   if (weatherData.ready) {
@@ -27,11 +27,7 @@ export default function Forecast(props) {
       <div className="forecastMainWeather">
         <h1>{data.city}</h1>
         <p className="date-time">
-          Last updated:
-          <br />
-          {data.currentDate}
-          <br />
-          {data.currentTime}
+          <RevampedDate date={weatherData.currentDate} />
         </p>
         <img src={data.iconUrl} alt={data.description} id="icon" />
         <p className="temperature" id="temperature">
