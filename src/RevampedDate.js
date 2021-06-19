@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function RevampedDate(props) {
-  let now = new Date();
 let days = [
   "Sunday",
   "Monday",
