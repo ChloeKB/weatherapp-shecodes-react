@@ -20,7 +20,7 @@ export default function Forecast(props) {
       minTemp: response.data.main.temp_min,
       maxTemp: response.data.main.temp_max,
       description: response.data.weather[0].description,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       currentDate: new Date(response.data.dt * 1000),
     });
   }
