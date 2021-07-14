@@ -1,5 +1,6 @@
 import React from "react";
 import RevampedDate from "./RevampedDate";
+import TemperatureW from "./TemperatureW";
 
 export default function DataW(props) {
   return (
@@ -8,10 +9,10 @@ export default function DataW(props) {
         <p className="date-time">
           <RevampedDate date={props.data.currentDate} />
         </p>
-        <img src={props.data.iconUrl} alt={props.data.description} id="icon" />
-        <p className="temperature" id="temperature">
-          {Math.round(props.data.temperature)} ºC
-        </p>
+      <img src={props.data.iconUrl} alt={props.data.description} id="icon" />
+      
+      <TemperatureW celsius={props.data.temperature} />
+      
         <p className="weather-description text-capitalize" id="weather-description">
           Wind Speed: {Math.round(props.data.wind)} km/h
           <br />
