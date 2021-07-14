@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.css';
-import Search from "./Search.js";
 import Forecast from "./Forecast.js";
 
 export default function App() {
