@@ -11,7 +11,6 @@ export default function App() {
       <div className="row justify-content-evenly">
         <div className="col-6 box-one">
           <br />
-          <Search />
           <Forecast defaultCity="Madrid" />
         </div>
       </div>
