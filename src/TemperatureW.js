@@ -3,11 +3,11 @@ import React, { useState } from "react";
 export default function TemperatureW(props) {
   const [unit, setUnit] = useState("celsius");
   function convertToF(event) {
-    event.preventDefault;
+    event.preventDefault();
     setUnit("fahrenheit");
   }
   function convertToC(event) {
-    event.preventDefault;
+    event.preventDefault();
     setUnit("celsius");
   }
 
