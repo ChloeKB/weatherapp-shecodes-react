@@ -59,6 +59,7 @@ export default function Forecast(props) {
     </div>
       );
   } else {
+    search();
     return ("The app is loading... 🔎")
   }
 }
