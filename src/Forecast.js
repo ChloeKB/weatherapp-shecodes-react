@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import DataW from "./DataW";
+import WeekForecast from "./WeekForecast";
 import "./Forecast.css";
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -11,17 +12,21 @@ export default function Forecast(props) {
 
   function displayWeatherForecast(response) {
     setWeatherData({
-      ready: true,
+      //ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       city: response.data.name,
       wind: response.data.wind.speed,
-      sunrise: response.data.sys.sunrise,
-      sunset: response.data.sys.sunset,
       minTemp: response.data.main.temp_min,
       maxTemp: response.data.main.temp_max,
       description: response.data.weather[0].description,
       iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       currentDate: new Date(response.data.dt * 1000),
+      pressure: response.data.main.pressure,
+      date: new Date(response.data.dt * 1000),
+      sunrise: new Date((response.data.sys.sunrise + response.data.timezone) * 1000),
+      sunset: new Date((response.data.sys.sunset + response.data.timezone) * 1000),
+      humidity: response.data.main.humidity,
     });
   }
 
@@ -44,23 +49,35 @@ export default function Forecast(props) {
   if (weatherData.ready) {
     return (
       <div className="searchForm">
-      <form id="city-form" onSubmit={submitSearch}>
-        <input
-          type="search"
-          placeholder="Type your city"
-          autofocus="on"
-          autocomplete="off"
-          id="search-text-input"
-          onChange ={cityChange}
-        />
-        <button id="submit-button">Search</button>
+        <form onSubmit={submitSearch}>
+          <div className="row">
+            <div className="col-8">
+              <input
+                type="text"
+                placeholder="Enter City"
+                className="form-control"
+                autofocus="on"
+                autocomplete="off"
+                id="city-form"
+                onChange ={cityChange}
+              />
+            </div>
+            <div className="col-4">
+              <input
+                type="submit"
+                value="Search"
+                className="btn-primary form-control"
+              />
+            </div>
+          </div>
         </form>
-        <DataW data={weatherData}/>
-    </div>
+        <DataW data={weatherData} />
+        <WeekForecast coordinates={weatherData.coordinates} />
+      </div>
       );
-  } else {
+} 
+else {
     search();
     return ("The app is loading... 🔎")
   }
 }
-

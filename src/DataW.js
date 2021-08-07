@@ -1,6 +1,7 @@
 import React from "react";
 import RevampedDate from "./RevampedDate";
-import TemperatureW from "./TemperatureW";
+import SunriseTime from "./SunriseTime";
+import SunsetTime from "./SunsetTime";
 
 export default function DataW(props) {
   return (
@@ -10,24 +11,38 @@ export default function DataW(props) {
           <RevampedDate date={props.data.currentDate} />
         </p>
       <img src={props.data.iconUrl} alt={props.data.description} id="icon" />
-      
-      <TemperatureW celsius={props.data.temperature} />
-      
+      <p className="currentTemperature"> {props.data.temperature}ºC </p>
         <p className="weather-description text-capitalize" id="weather-description">
-          Wind Speed: {Math.round(props.data.wind)} km/h
-          <br />
           {props.data.description}
         </p>
         <p className="minmax" id="minmax">
           {" "}
-          min {Math.round(props.data.minTemp)} ºC - max {Math.round(props.data.maxTemp)} ºC
+          min {Math.round(props.data.minTemp)}ºC - max {Math.round(props.data.maxTemp)}ºC
         </p>
+      <hr />
+      <div className="row current-extraInfo">
+          <div className="col-3">
+            <strong>Wind Speed</strong>
+            <br />
+            <span>{Math.round(props.data.wind)} km/h</span>
+          </div>
+          <div className="col-3">
+            <strong>Humidity</strong>
+            <br />
+            <span>{props.data.humidity}%</span>
+          </div>
+          <div className="col-3">
+            <strong>Sunrise</strong>
+            <br />
+            < SunriseTime date={props.data.sunrise}/>
+          </div>
+          <div className="col-3">
+            <strong>Sunset</strong>
+            <br />
+            < SunsetTime date={props.data.sunset} />
+          </div>
+        </div>
         <hr />
-        <p className="sunrise-sunset" id="sunrise-sunset">
-          sunrise {props.data.sunrise} (UTC +2)
-         <br/>
-          sunset {props.data.sunset} (UTC +2)
-        </p>
-      </div>
+    </div>
   )
 }

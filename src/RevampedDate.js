@@ -24,8 +24,8 @@ let months = [
   "November",
   "December"
 ];
-let currentDay = days[props.date.getDay()];
-let currentMonth = months[props.date.getMonth()];
+let currentDay =  days[props.date.getDay()];
+let currentMonth =  months[props.date.getMonth()];
   let currentDate = props.date.getDate();
   let currentYear = props.date.getFullYear();
   let currentHour = props.date.getHours();
@@ -36,8 +36,8 @@ let currentMonth = months[props.date.getMonth()];
   if (currentMinutes < 10) {
     currentMinutes = `0${currentMinutes}`;
   }
-
+   
   return (<div>
-    {currentDay} - {currentMonth} {currentDate} {currentYear} <br /> {currentHour}:{currentMinutes}
+    `{currentDay} - {currentMonth} {currentDate} {currentYear} <br /> {currentHour}:{currentMinutes}`
   </div>)
 }
