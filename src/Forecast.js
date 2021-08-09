@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import DataW from "./DataW";
-import WeekForecast from "./WeekForecast";
+import WeekForecast from "./WeekForecast.js";
 import "./Forecast.css";
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -12,7 +12,7 @@ export default function Forecast(props) {
 
   function displayWeatherForecast(response) {
     setWeatherData({
-      //ready: true,
+      ready: true,
       coordinates: response.data.coord,
       temperature: response.data.main.temp,
       city: response.data.name,
@@ -41,7 +41,7 @@ export default function Forecast(props) {
   }
 
   function search() {
-    const apiKey = "dc61646fab1512ff70fdca30d4a70361";
+    const apiKey = "7e57124d11c94d9c4f320597a0576f8c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeatherForecast);
   }
