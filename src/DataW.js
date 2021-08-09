@@ -13,14 +13,15 @@ export default function DataW(props) {
           <RevampedDate date={props.data.currentDate} />
         </p>
       <img src={props.data.iconUrl} alt={props.data.description} id="icon" />
-      <p className="currentTemperature"> {props.data.temperature}ºC </p>
-        <p className="weather-description text-capitalize" id="weather-description">
-          {props.data.description}
-        </p>
-        <p className="minmax" id="minmax">
+      <p className="currentTemperature"> {Math.round(props.data.temperature)}ºC </p>
+      <p className="minmax" id="minmax">
           {" "}
           min {Math.round(props.data.minTemp)}ºC - max {Math.round(props.data.maxTemp)}ºC
         </p>
+        <p className="weather-description text-capitalize" id="weather-description">
+          {props.data.description}
+        </p>
+        
       <hr />
       <div className="row current-extraInfo">
           <div className="col-3">

@@ -38,6 +38,6 @@ let currentMonth =  months[props.date.getMonth()];
   }
    
   return (<div>
-    `{currentDay} - {currentMonth} {currentDate} {currentYear} <br /> {currentHour}:{currentMinutes}`
+    {currentDay} - {currentMonth} {currentDate} {currentYear} <br /> {currentHour}:{currentMinutes}
   </div>)
 }

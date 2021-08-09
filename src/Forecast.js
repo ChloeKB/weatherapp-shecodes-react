@@ -51,7 +51,9 @@ export default function Forecast(props) {
       <div className="searchForm">
         <form onSubmit={submitSearch}>
           <div className="row">
-            <div className="col-8">
+          <div className="col-3"></div>
+
+            <div className="col-4">
               <input
                 type="text"
                 placeholder="Enter City"
@@ -60,13 +62,11 @@ export default function Forecast(props) {
                 onChange ={cityChange}
               />
             </div>
-            <div className="col-4">
-              <input
-                type="submit"
-                value="Search"
-                className="btn-primary form-control"
-              />
+            <div className="col-2">
+            <button className="buttonSearch" id = "submit-button">Search</button>
             </div>
+            <div className="col-3"></div>
+
           </div>
         </form>
         <DataW data={weatherData} />
