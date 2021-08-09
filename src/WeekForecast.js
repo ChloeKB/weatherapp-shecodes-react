@@ -35,7 +35,7 @@ export default function WeekForecast(props) {
       </div>
     );
   } else {
-    let apiKey = "7e57124d11c94d9c4f320597a0576f8c";
+    let apiKey = "0e95dc70e3b986e36396abe481cbe9a6";
     let latitude = props.coordinates.lat;
     let longitude = props.coordinates.lon;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
