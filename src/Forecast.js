@@ -56,8 +56,6 @@ export default function Forecast(props) {
                 type="text"
                 placeholder="Enter City"
                 className="form-control"
-                autofocus="on"
-                autocomplete="off"
                 id="city-form"
                 onChange ={cityChange}
               />
