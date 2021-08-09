@@ -1,0 +1,26 @@
+.weekForecastDay {
+  font-family: "Balsamiq Sans", cursive;
+  text-align: center;
+  font-size: 17px;
+}
+
+#weatherForecastIcon {
+  max-width: 80%;
+  text-align: center;
+
+}
+.temperature {
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.minTemp,
+.maxTemp {
+  font-family: "Balsamiq Sans", cursive;
+  text-align: center;
+  font-size: 17px;
+}
+
+.minTemp{
+color: cadetblue;
+}

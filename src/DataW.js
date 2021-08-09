@@ -2,6 +2,8 @@ import React from "react";
 import RevampedDate from "./RevampedDate";
 import SunriseTime from "./SunriseTime";
 import SunsetTime from "./SunsetTime";
+import "./DataW.css";
+
 
 export default function DataW(props) {
   return (
